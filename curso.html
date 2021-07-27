@@ -1,0 +1,462 @@
+﻿<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Portal Escolagov - Detalhes de Curso</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/owl.carousel.min.css" rel="stylesheet">
+    <link href="css/owl.theme.default.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/escolagov.css" rel="stylesheet">
+
+
+
+    <!--[if lt IE 9]>
+       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+     <![endif]-->
+
+</head>
+<body>
+
+    <!-- Modal Contato -->
+    <div class="modal fade" id="modal-contato" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg modal-contato" role="document">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i aria-hidden="true" class="fa fa-close"></i>Fechar</button>
+                    <div class="modal-titulo"><div></div><h1>Contato</h1></div>
+                </div>
+
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="contato-nome">Nome</label>
+                            <input type="text" class="form-control" id="contato-nome" />
+                            <p class="error" style="display: none;">Mensagem de erro!</p><!--Trocar para display block para exibir a mensagem de erro-->
+                        </div>
+                        <div class="form-group">
+                            <label for="contato-email">Email</label>
+                            <input type="email" class="form-control" id="contato-email" />
+                            <p class="error" style="display: none;">Mensagem de erro!</p><!--Trocar para display block para exibir a mensagem de erro-->
+
+                        </div>
+                        <div class="form-group">
+                            <label for="contato-mensagem">Senha</label>
+                            <textarea class="form-control" id="contato-mensagem"></textarea>
+                            <p class="error" style="display: none;">Mensagem de erro!</p><!--Trocar para display block para exibir a mensagem de erro-->
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Login -->
+    <div class="modal fade" id="modal-login" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg modal-login" role="document">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i aria-hidden="true" class="fa fa-close"></i>Fechar</button>
+            <div class="modal-content">
+                <!--Quando clicar em "Esqueceu a senha?", ocultar a div class="login-content" e exibir a div class="recuperar-senha-content"-->
+                <div class="login-content">
+                    <div class="modal-header">
+                        <div class="modal-titulo"><div></div><h1>Login</h1></div>
+                    </div>
+
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="login">CPF/Login</label>
+                                <input type="text" class="form-control" id="login" />
+                                <p class="error" style="display: none;">Mensagem de erro!</p><!--Trocar para display:block para exibir a mensagem de erro-->
+                            </div>
+                            <div class="form-group">
+                                <label for="senha">Senha</label>
+                                <input type="email" class="form-control" id="senha" />
+                                <p class="error" style="display: none;">Mensagem de erro!</p><!--Trocar para display:block para exibir a mensagem de erro-->
+                                <a href="#">Esqueceu sua senha?</a>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary mt15">Enviar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="recuperar-senha-content">
+                    <div class="modal-header">
+                        <div class="modal-titulo"><div></div><h1>Recuperar senha</h1></div>
+                    </div>
+
+                    <div class="modal-body">
+                        <p class="text-center">Digite seu CPF no campo abaixo para receber um email com instruções para recuperar sua senha</p>
+                        <form>
+                            <div class="form-group">
+                                <label for="recupera-senha-cpf">CPF</label>
+                                <input type="number" class="form-control" id="recupera-senha-cpf" />
+                                <p class="error" style="display: none;">Mensagem de erro!</p><!--Trocar para display:block para exibir a mensagem de erro-->
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-secondary mt15 mr15">Voltar</button>
+                                <!--Ao clicar em Voltar, oculta a div class="recuperar-senha-content" e exibe a div div class="login-content"-->
+                                <button type="submit" class="btn btn-primary mt15">Enviar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Cadastro -->
+    <div class="modal fade" id="modal-cadastro" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg modal-cadastro" role="document">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i aria-hidden="true" class="fa fa-close"></i>Fechar</button>
+                    <div class="modal-titulo"><div></div><h1>Cadastre-se</h1></div>
+                </div>
+
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="cadastro-nome">Nome</label>
+                            <input type="text" class="form-control" id="cadastro-nome" />
+                            <p class="error" style="display: none;">Mensagem de erro!</p><!--Trocar para display:block para exibir a mensagem de erro-->
+                        </div>
+                        <div class="form-group">
+                            <label for="cadastro-email">Email</label>
+                            <input type="email" class="form-control" id="cadastro-email" />
+                            <p class="error" style="display: none;">Mensagem de erro!</p><!--Trocar para display:block para exibir a mensagem de erro-->
+                        </div>
+                        <div class="form-group">
+                            <label for="cadastro-senha">Senha</label>
+                            <input type="password" class="form-control" id="cadastro-senha" />
+                            <p class="error" style="display: none;">Mensagem de erro!</p><!--Trocar para display:block para exibir a mensagem de erro-->
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary mt15">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-default menu-escolagov navbar-fixed-top">
+        <div class="container">
+            <!-- Logo e botão do menu mobile -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-navbar-collapse" aria-expanded="false">
+                    <span class="sr-only">Expandir menu</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><img alt="Escolagov" src="img/logo-topo.png"></a>
+            </div>
+
+            <!-- Links da navegação -->
+            <div class="collapse navbar-collapse navbar-right" id="menu-navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.html">Home <span class="sr-only">(página atual)</span></a></li>
+                    <li class="divider hidden-xs">/</li>
+                    <li><a href="#" class="prohibited">Portal do Servidor</a></li>
+                    <li class="divider hidden-xs">/</li>
+                    <li><a href="#" data-toggle="modal" data-target="#modal-contato">Contato</a></li>
+                </ul>
+                <div class="btn-group btn-topo" role="group" aria-label="login">
+                    <a href="#" class="btn btn-default prohibited" data-toggle="modal" data-target="#modal-login">Login</a>
+                    <a href="#" class="btn btn-default prohibited" data-toggle="modal" data-target="#modal-cadastro">Cadastro</a>
+
+                    <!--Sugestão de botões para quando o usuário estiver logado-->
+                    <!--<a href="#" class="btn btn-default">Painel</a>
+                    <a href="#" class="btn btn-default"><i class="fa fa-power-off"></i>&nbsp;&nbsp;Sair</a>-->
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="cabecalho-curso" style="background-image: url(img/slide-home-1.jpg)">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <ol class="breadcrumb">
+                        <li><a href="index.html">Página Inicial</a></li>
+                        <li><a href="lista-cursos.html">Cursos</a></li>
+                        <li class="active">Informática</li>
+                    </ol>
+                    <h1>Palestra: "Como o empreendedorismo pode transformar a gestão pública"</h1>
+                    <!--<h1>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore</h1>-->
+                    <p class="duracao">Duração: 1052 horas</p>
+                    <p class="descricao">Habilitar o profissional para o desenvolvimento de programas de computador para internet (Aplicações Web e Mobile), seguindo as normas e especificações da lógica de programação</p>
+                    <button class="btn btn-lg btn-secondary prohibited">Inscreva-se</button>
+                    <div class="compartilhe">
+                        #compartilhe:
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                        <a href="#"><i class="fa fa- fa-google-plus"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container curso-descricao">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="curso-descricao-shadow">
+                    <h1 class="destaque-titulo">Sobre a turma</h1>
+                    <div class="content">
+
+                        <div class="item-descricao">
+                            <div><i class="fa fa-calendar"></i></div>
+                            <p>
+                                <span>Período</span>
+                                De 01/04/17 a 20/04/17
+                            </p>
+                            <span style="clear:both"></span>
+                        </div>
+                        <div class="item-descricao">
+                            <div><i class="fa fa-map-marker"></i></div>
+                            <p>
+                                <span>Local</span>
+                                Brasil, Mato Grosso do Sul, Campo Grande<br />
+                                ONLINE NO SITE <a href="http://ead.escolagov.ms.gov.br/ava">http://ead.escolagov.ms.gov.br/ava</a>
+                            </p>
+                        </div>
+                        <div class="item-descricao">
+                            <div><i class="fa fa-users"></i></div>
+                            <p>
+                                <span>Número de Vagas</span>
+                                50
+                            </p>
+                        </div>
+                        <div class="item-descricao">
+                            <div><i class="fa fa-clock-o"></i></div>
+                            <p>
+                                <span>Horário</span>
+                                CURSO ONLINE - DISPONÍVEL 24H
+                            </p>
+                        </div>
+                        <div class="item-descricao">
+                            <div><i class="fa fa-pencil"></i></div>
+                            <p>
+                                <span>Inscrições</span>
+                                De 06/03/17 a 26/03/17
+                            </p>
+                        </div>
+                        <div class="item-descricao">
+                            <div><i class="fa fa-comment"></i></div>
+                            <p>
+                                <span>Contato</span>
+                                Silvana ou Gustavo
+                                Horário: 07:30 às 17:30
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="text-center"><button class="btn btn-lg btn-secondary prohibited">Inscreva-se</button></div>
+                </div>
+            </div>
+
+            <div class="col-md-8 sobre-curso">
+                <h1 class="destaque-titulo">Sobre o curso</h1>
+                <p>
+                    <span>A quem se destina</span>
+                    Agentes públicos dos três poderes e das três esferas de governo.
+                </p>
+                <p>
+                    <span>Descrição</span>
+                    O curso tem como objetivo principal homogeneizar conhecimentos sobre alguns temas relacionados à gestão de pessoas, essenciais para a discussão sobre as diretrizes dos planos de carreira.
+                </p>
+                <p>
+                    <span>Objetivos Gerais</span>
+                    - Identificar a gestão por competências como ferramenta eficaz para concretizar os objetivos estratégicos da organização;<br />
+                    - Analisar a gestão por competências como instrumento promovedor de inovação, aprendizagem e desenvolvimento dos indivíduos e das equipes;<br />
+                    - Discutir as diretrizes de planos de carreira no âmbito do Poder Executivo Federal com enfoque da gestão por competências.
+                </p>
+                <p>
+                    <span>Como Funciona</span>
+                    Este curso será realizado na modalidade a distância, utilizando a plataforma Moodle disponível na Escolagov (ead.escolagov.ms.gov.br), tanto para apresentação do conteúdo quanto para cumprimento das atividades avaliativas.
+                </p>
+                <p>
+                    <span>Carga Horária</span>
+                    20 hora(s)/aula
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container cursos-destaque">
+        <h1><span>Confira também</span></h1>
+
+        <div class="row">
+
+            <div class="col-sm-6 col-md-6 col-lg-3">                
+                <div class="item-curso">
+                    <div class="foto" style="background-image: url(img/curso-destaque-1.jpg);">
+                        <span class="presencial">Curso presencial</span><!-- Aplicar a classe presencial ou distancia para aplicar a cor no texto -->
+                    </div>
+                    <div class="curso-container">
+                        <div class="descricao">
+                            <h2>Palestra: "Como o empreendedorismo pode transformar a gestão pública lorem ipsum dolor sit amet"</h2>
+                            <p>
+                                Sempre com o desafio de promover a gestão do Estado, melhorar a qualidade do serviço público e entregar um bom resultado ao ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam
+                            </p>
+                        </div>
+                        <div class="rate">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-full"></i>
+                            <i class="fa fa-star-o"></i>
+                        </div>
+                        <form>
+                            <!-- <button type="submit" class="btn btn-primary btn-sm">Ver mais</button> -->
+                            <a href="curso.html" class="btn btn-primary btn-sm">Ver mais</a>
+                            <button type="submit" class="btn btn-secondary btn-sm prohibited">Inscreva-se</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-6 col-lg-3">
+                <div class="item-curso">
+                    <div class="foto" style="background-image: url(img/curso-destaque-2.jpg);">
+                        <span class="distancia">Curso a distância</span>
+                    </div>
+                    <div class="curso-container">
+                        <div class="descricao">
+                            <h2>Lorem ipsum dolor sit amet, consectetuer adipiscing elit</h2>
+                            <p>
+                                Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros nonummy nibh
+                            </p>
+                        </div>
+                        <div class="rate">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o"></i>
+                            <i class="fa fa-star-o"></i>
+                        </div>
+                        <form>
+                            <!-- <button type="submit" class="btn btn-primary btn-sm">Ver mais</button> -->
+                            <a href="curso.html" class="btn btn-primary btn-sm">Ver mais</a>
+                            <button type="submit" class="btn btn-secondary btn-sm prohibited">Inscreva-se</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-6 col-lg-3">
+                <div class="item-curso">
+                    <div class="foto" style="background-image: url(img/curso-destaque-1.jpg);">
+                        <span class="presencial">Curso presencial</span>
+                    </div>
+                    <div class="curso-container">
+                        <div class="descricao">
+                            <h2>Palestra: "Como o empreendedorismo pode transformar a gestão pública"</h2>
+                            <p>
+                                Sempre com o desafio de promover a gestão do Estado, melhorar a qualidade do serviço público e entregar um bom resultado ao ipsum dolor sit amet, consectetuer
+                            </p>
+                        </div>
+                        <div class="rate">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o"></i>
+                        </div>
+                        <form>
+                            <!-- <button type="submit" class="btn btn-primary btn-sm">Ver mais</button> -->
+                            <a href="curso.html" class="btn btn-primary btn-sm">Ver mais</a>
+                            <button type="submit" class="btn btn-secondary btn-sm prohibited">Inscreva-se</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-6 col-lg-3">
+                <div class="item-curso">
+                    <div class="foto" style="background-image: url(img/curso-destaque-2.jpg);">
+                        <span class="distancia">Curso a distância</span>
+                    </div>
+                    <div class="curso-container">
+                        <div class="descricao">
+                            <h2>Lorem ipsum dolor sit amet, consectetuer adipiscing elit</h2>
+                            <p>
+                                Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero
+                            </p>
+                        </div>
+                        <div class="rate">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-full"></i>
+                            <i class="fa fa-star-o"></i>
+                        </div>
+                        <form>
+                            <!-- <button type="submit" class="btn btn-primary btn-sm">Ver mais</button> -->
+                            <a href="curso.html" class="btn btn-primary btn-sm">Ver mais</a>
+                            <button type="submit" class="btn btn-secondary btn-sm prohibited">Inscreva-se</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="text-center">
+            <a href="lista-cursos.html" class="btn btn-primary btn-lg ver-cursos">Ver todos</a>
+        </div>
+    </section>
+
+    <footer>
+        <div>
+            <div class="container">
+                <div class="logos">
+                    <img src="img/logo-escolagov-rodape.png" />
+                    <a href="http://www.ms.gov.br/" target="_blank"><img src="img/logo-governo-rodape.png" /></a>
+                </div>
+                <div class="endereco">
+                    <p>
+                        <strong>Endereço</strong>
+                        Av. Mato Grosso, 5778, Bl. 2 - Parque dos Poderes<br />
+                        CEP: 79.031-001 - Fone: (67) 3321-6100
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="container">
+                <div class="logos sgi">
+                    <a href="http://www.sgi.ms.gov.br/" target="_blank"><img src="img/logo-ucqi.png" /></a>
+                    <a href="http://www.sgi.ms.gov.br/" target="_blank"><img src="img/logo-sgi.png" /></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.paroller.min.js"></script>
+    <script src="js/escolagov.js"></script>
+
+</body>
+</html>
