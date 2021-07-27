@@ -1,3 +1,8 @@
+View live:
+https://rodzmoraes.github.io/escolagov/
+
+
+
 # English
 Website developed for the training department of the State Government of Mato Grosso do Sul (Brazil).
 The development team asked me to create the layout and basic front-end structure (HTML, CSS, Bootstrap).
